@@ -39,7 +39,7 @@ export default function Home() {
         </video>
         <CustomNavBar/>
         <div className="absolute top-20 left-0 h-[70vh] w-[90vw] m-auto z-0 flex items-center justify-center">
-          <h1 className="text-white font-bold text-4xl">{texts[currentTextIndex]}</h1>
+          <h1 className="text-white font-bold text-4xl text-center">{texts[currentTextIndex]}</h1>
         </div>
         <div className="absolute flex w-[90vw] mb-2 sm:hidden bottom-0 z-9 justify-center">
           <Button className=" cursor-pointer bg-background text-foreground dark:text-background dark:bg-foreground hover:bg-accent-background">Join Now! ♟️ </Button>
@@ -197,11 +197,6 @@ export default function Home() {
         <h1 className="p-2 pl-10 pr-10 sm:pl-20 sm:pr-20 text-foreground bg-background text-center">At Upmove, we believe in <b>personalized</b> training plans for students, tweaking and changing the plan based on tournament performance</h1>
         </div>
         <div className="flex-1/2 flex justify-center sm:pt-[15vh] pb-5"><img src="chess-piece.jpg" className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh]" alt="Chess Pieces" /></div>
-      </div>
-      
-      <div className="flex w-full flex-col h-[10vh] justify-center border-t-2 border-t-gray drop-shadow-lg shadow align-items-center">
-        <h2 className="font-bold m-auto"> 2025 &#169; Upmove Chess Academy. All Rights Reserved! 
-        </h2>
       </div>
     </div>
   );

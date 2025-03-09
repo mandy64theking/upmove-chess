@@ -19,10 +19,6 @@ export default function Page() {
         </div>
         <div className="flex-1/2 flex justify-center sm:pt-[15vh] pb-5"><img src="analog-clock.jpg" className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh]" alt="Chess Pieces" /></div>
         </div>
-        <div className="flex w-full flex-col h-[10vh] justify-center border-t-2 border-t-gray drop-shadow-lg shadow align-items-center">
-        <h2 className="font-bold m-auto"> 2025 &#169; Upmove Chess Academy. All Rights Reserved! 
-        </h2>
-      </div>
         </div>
     );
 }
