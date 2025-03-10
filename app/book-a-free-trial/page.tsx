@@ -45,7 +45,7 @@ export default function Page() {
         <div>
         <CustomNavBar />
         <Form {...form} >
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mt-[20vh] min-w-70 w-[70vw] sm:w-[30vw] m-auto border-2 rounded-3xl p-5">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mt-[20vh] mb-5 min-w-70 w-[70vw] sm:w-[30vw] bg-muted m-auto border-2 rounded-3xl p-5">
         <FormField
           control={form.control}
           name="name"
