@@ -41,8 +41,8 @@ export default function Home() {
         <div className="absolute top-20 left-0 h-[70vh] w-[90vw] m-auto z-0 flex items-center justify-center">
           <h1 className="text-white font-bold text-4xl text-center">{texts[currentTextIndex]}</h1>
         </div>
-        <div className="absolute flex w-[90vw] mb-2 sm:hidden bottom-0 z-9 justify-center">
-          <Button className=" cursor-pointer bg-background text-foreground dark:text-background dark:bg-foreground hover:bg-accent-background">Join Now! ♟️ </Button>
+        <div className="absolute flex w-[90vw] mb-2 sm:hidden bottom-14 z-9 justify-center">
+          <Button className="border-gray cursor-pointer">Join Now! ♟️ </Button>
         </div>
       </div>
 
