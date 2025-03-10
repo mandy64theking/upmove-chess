@@ -150,9 +150,9 @@ export default function Home() {
       <div className="min-h-[90vh] w-full flex flex-col sm:flex-row justify-center items-center">
         <div className="pt-[15vh]">
         <h1 className="text-foreground bg-background font-bold text-4xl text-center">What we do?</h1>
-        <h1 className="text-foreground bg-background font-normal text-center mt-10 max-w-[70vw] sm:max-w-[90vw]">We offer personalized <b>Group</b> and <b>1-on-1</b> coaching sessions with experienced chess trainers to mentor you. Whether you're a beginner or a seasoned player, we have the expertise to help you reach your full potential.</h1>
-        <div className="grid mx-auto sm:grid-cols-3 gap-2">
-        <Card className="mt-5 w-[70vw] sm:w-[30vw] dark:bg-muted">
+        <h1 className="text-foreground bg-background font-normal text-center mt-10 max-w-[80vw] sm:max-w-[80vw]">We offer personalized <b>Group</b> and <b>1-on-1</b> coaching sessions with experienced chess trainers to mentor you. Whether you're a beginner or a seasoned player, we have the expertise to help you reach your full potential.</h1>
+        <div className="grid mx-auto sm:grid-cols-3 gap-1">
+        <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
           <CardHeader> 
           <CardTitle className="flex justify-evenly items-center">
             <h1>Group Classes</h1>
@@ -161,7 +161,7 @@ export default function Home() {
           </CardHeader>
           <CardContent className="font-normal text-muted-foreground">An Interactive online class taken with a group of 3 to 6 students following level-wise curriculum!</CardContent>
         </Card>
-        <Card className="mt-5 w-[70vw] sm:w-[30vw] dark:bg-muted">
+        <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
           <CardHeader> 
           <CardTitle className="flex justify-evenly items-center">
             <h1>1-on-1 Classes</h1>
@@ -170,7 +170,7 @@ export default function Home() {
           </CardHeader>
           <CardContent className="font-normal text-muted-foreground">An Individual online class taken with your trainer following a personalized training plan based on your performance!</CardContent>
         </Card>
-        <Card className="mt-5 w-[70vw] sm:w-[30vw] dark:bg-muted">
+        <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
           <CardHeader> 
           <CardTitle className="flex justify-evenly items-center">
             <h1>Offline Classes</h1>
