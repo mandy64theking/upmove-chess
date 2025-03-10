@@ -16,7 +16,7 @@ export default function CustomNavBar() {
     setMenuOpen(!menuOpen);
   };
     return(
-    <div className={`fixed top-0 left-0 w-[95vw] bg-background opacity-90 flex ${menuOpen ? 'flex-col h-[48vh] z-10 opacity-100':'flex-row h-[15vh] z-10'} justify-between p-8 m-5 border-2 border-gray rounded-3xl`}>
+    <div className={`fixed top-0 left-0 sm:w-[95vw] w-[90vw] bg-background opacity-90 flex ${menuOpen ? 'flex-col h-[48vh] z-10 opacity-100':'flex-row h-[15vh] z-10'} justify-between p-8 m-5 border-2 border-gray rounded-3xl`}>
               <div className="flex flex-row justify-between w-full items-center">
                 <img src="logo.png" alt="Upmove Chess Academy" className="dark:invert max-h-[10vh] min-h-10 min-w-1.5 bg-white rounded-md"/>
                 <ul className="m-2 flex flex-col sm:hidden cursor-pointer z-10" onClick={handleMenuClick}>

@@ -12,6 +12,7 @@ import {
 import CustomNavBar from "./customNavBar";
 
 export default function Home() {
+  
   const texts = ["Chess is Art", "Chess is Science", "Chess is Sport", "Chess is Everything!"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
