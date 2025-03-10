@@ -42,7 +42,7 @@ export default function Home() {
           <h1 className="text-white font-bold text-4xl text-center">{texts[currentTextIndex]}</h1>
         </div>
         <div className="absolute flex w-[90vw] mb-2 sm:hidden bottom-14 z-9 justify-center">
-          <Button className="border-gray cursor-pointer">Join Now! ♟️ </Button>
+          <a href="/book-a-free-trial"><Button className="border-gray cursor-pointer">Join Now! ♟️ </Button></a>
         </div>
       </div>
 
