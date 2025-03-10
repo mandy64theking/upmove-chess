@@ -5,8 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Footer from "./footer";
 
 export const metadata: Metadata = {
-  title: "Upmove Chess Academy",
-  description: "Chess Mentorship for all ages and levels!",
+  title: "Upmove Chess Academy | Chess Mentorship and Training",
+  description: "Upmove Chess Academy is a leading chess institute offering personalized mentorship and fun, engaging training for all skill levels. Our expert coaches focus on strategic growth through structured lessons and real-game analysis, making learning both effective and enjoyable!",
 };
 
 export default function RootLayout({
