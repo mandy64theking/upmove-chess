@@ -36,87 +36,103 @@ export default function Page() {
             age: 0,
             phone: "",
         },
-      })
-      function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
-        window.location.reload()
-      }
-    return(
+    });
+
+    function onSubmit(values: z.infer<typeof formSchema>) {
+        const queryParams = new URLSearchParams(values as any).toString();
+        const url = `https://z5pjr4limdtaxlsjhrprc5gvge0auzbg.lambda-url.us-east-2.on.aws/?${queryParams}`;
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            window.location.reload();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+
+    return (
         <div>
-        <CustomNavBar />
-        <Form {...form} >
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mt-[20vh] mb-5 min-w-70 w-[70vw] sm:w-[30vw] bg-muted m-auto border-2 rounded-3xl p-5">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Enter Your Name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-            name="email"
-            render={({ field }) => (
-                <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                        <Input placeholder="Enter Your Email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-            )}
-        />
-        <FormField
-            control={form.control}
-                name="message"
-                render={({ field }) => (
-                    <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                            <Input placeholder="Enter Your Message" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                    </FormItem>
-                )}
-        />
-        <FormField 
-            control={form.control}
-                name="age"
-                render={({ field }) => (
-                    <FormItem>
-                        <FormLabel>Age</FormLabel>
-                        <FormControl>
-                            <Input placeholder="Enter Your Age" {...field} onChange={(e) => form.setValue("age", parseInt(e.target.value, 10))}/>
-                        </FormControl>
-                        <FormMessage />
-                    </FormItem>
-                )}
-        />
-        <FormField
-            control={form.control}
-                name="phone"
-                render={({ field }) => (
-                    <FormItem>
-                        <FormLabel>Phone</FormLabel>
-                        <FormControl>
-                            <Input placeholder="Enter Your Phone" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                    </FormItem>
-                )}
-        />
-        <FormDescription>
-          We'll never share your details with anyone else.
-        </FormDescription>
-        <Button className="cursor-pointer"  type="submit">Submit</Button>
-      </form>
-    </Form>
-    </div>
+            <CustomNavBar />
+            <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mt-[20vh] min-w-70 w-[70vw] sm:w-[30vw] m-auto border-2 rounded-3xl p-5">
+                    <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Name</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Enter Your Name" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Email</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Enter Your Email" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Message</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Enter Your Message" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="age"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Age</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Enter Your Age" {...field} onChange={(e) => form.setValue("age", parseInt(e.target.value, 10))} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Phone</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Enter Your Phone" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormDescription>
+                        We'll never share your details with anyone else.
+                    </FormDescription>
+                    <Button className="cursor-pointer" type="submit">Submit</Button>
+                </form>
+            </Form>
+        </div>
     );
 }
