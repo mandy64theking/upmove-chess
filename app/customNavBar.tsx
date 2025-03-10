@@ -28,7 +28,7 @@ export default function CustomNavBar() {
               <div className={`justify-center sm:flex ${menuOpen ? 'fixed top-[15vh] left-0 w-full opacity-90 flex flex-col items-center p-5':'hidden'}`}><NavBar className={`${menuOpen ? 'flex-col':'h-full align-middle justify-center items-start'}`}/></div>
               <TooltipProvider>
                 <Tooltip>
-                    <TooltipTrigger><a href=""onClick={()=> setTheme("dark")}><img src="night-mode.png" className="max-w-7 ml-2 m-1 dark:hidden" alt="" /></a></TooltipTrigger>
+                    <TooltipTrigger><a href=""onClick={()=> setTheme("dark")}><img src="night-mode.png" className="max-w-7 ml-2 m-1 flex dark:hidden" alt="" /></a></TooltipTrigger>
                     <TooltipContent>
                     <p>Switch to Dark Mode</p>
                     </TooltipContent>
