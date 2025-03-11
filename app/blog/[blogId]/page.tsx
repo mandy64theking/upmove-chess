@@ -2,13 +2,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import CustomNavBar from "@/components/customNavBar";
 import BlogView from "@/components/blogView";
 
-export default function Page({ params }: { params: { blogId: string } }) {
+type Props = {
+    params: Promise<{ blogId: string }>
+    searchParams: Promise<{ [blogId: string]: string | string[] | undefined }>
+}
+
+export default async function Page({params} : Props) {
+    const {blogId} = await params;
     return( <div>
         <CustomNavBar />
         <div className="w-full flex flex-col sm:flex-row-reverse justify-center items-center">
         <div className="pt-[20vh] flex-1/2 flex flex-col justify-center items-center">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 pb-4">
-            {params.blogId}
+            {blogId}
             </div>
         </div>
         </div>
