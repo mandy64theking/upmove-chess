@@ -1,4 +1,4 @@
-import CustomNavBar from "../customNavBar";
+import CustomNavBar from "@/components/customNavBar";
 import {
     Card,
     CardContent,

@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import CustomNavBar from "./customNavBar";
+import CustomNavBar from "@/components/customNavBar";
 
 export default function Home() {
   

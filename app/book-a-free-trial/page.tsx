@@ -24,7 +24,7 @@ const formSchema = z.object({
     phone: z.string().regex(/^\d{10}$/),
 })
 
-import CustomNavBar from "../customNavBar";
+import CustomNavBar from "@/components/customNavBar";
 
 export default function Page() {
     const form = useForm<z.infer<typeof formSchema>>({
