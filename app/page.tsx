@@ -31,6 +31,15 @@ export default function Home() {
 
   return (
     <div>
+      <a href="https://wa.me/919028698447">
+        <Image
+          src="/whatsapp-green.png"
+          width={70}
+          height={70}
+          alt="Whatsapp icon"
+          className="fixed bottom-5 right-5 z-10 cursor-pointer"
+        />
+      </a>
       <div className="relative">
         <video
           autoPlay
