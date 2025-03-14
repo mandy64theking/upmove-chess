@@ -27,6 +27,7 @@ export default async function Page({ params }: Props) {
               imgDescription="Image Footer"
             />
             <BlogText>
+              Hello {blogId}
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, harum
               repellat numquam velit natus voluptate quam nesciunt eos
               cupiditate commodi quis doloribus doloremque enim. Tenetur

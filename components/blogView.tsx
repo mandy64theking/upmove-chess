@@ -5,7 +5,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Link } from "lucide-react";
 import Image from "next/image";
 
 export default function BlogView({
