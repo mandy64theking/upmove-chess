@@ -12,6 +12,7 @@ export default function Page() {
               title="Blog title"
               description="Blog Description"
               imgLink="/chess-board.jpg"
+              href="/blog/1"
             />
           </div>
         </div>
