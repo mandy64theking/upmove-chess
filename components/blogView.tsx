@@ -23,7 +23,7 @@ export default function BlogView({
   return (
     <div>
       <a href={href}>
-        <Card className={cn("cursor-pointer", className)}>
+        <Card className={cn("cursor-pointer w-[60vw] sm:w-[30vw]", className)}>
           <CardHeader>
             <CardTitle>
               <Image

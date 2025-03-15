@@ -8,7 +8,9 @@ function Blog({
   children: React.ReactNode;
   className?: string;
 }) {
-  return <div className={cn(className)}>{children}</div>;
+  return (
+    <div className={cn("w-[80vw] sm:w-[50vw]", className)}>{children}</div>
+  );
 }
 
 function BlogTitle({
@@ -69,7 +71,7 @@ function BlogText({
   children,
   className,
 }: {
-  children: React.ReactNode;
+  children: string; // Change the type to string to accept HTML-formatted text
   className?: string;
 }) {
   return (
@@ -78,9 +80,8 @@ function BlogText({
         "text-sm max-w-[80vw] sm:max-w-[60vw] font-medium text-justify",
         className
       )}
-    >
-      <p>{children}</p>
-    </div>
+      dangerouslySetInnerHTML={{ __html: children }} // Use dangerouslySetInnerHTML to render HTML
+    />
   );
 }
 

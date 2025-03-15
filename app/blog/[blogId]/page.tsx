@@ -64,13 +64,14 @@ export default function Page() {
         <div className="pt-[20vh] flex flex-col justify-center items-center">
           <Blog>
             <BlogTitle>{blogData.title}</BlogTitle>
-            <BlogDescription>
+            <BlogDescription className="p-2">
               by {blogData.author}
               <br /> {blogData.description}
             </BlogDescription>
             <BlogImage
               imgLink={blogData.imageUrl}
-              imgDescription="Image Footer"
+              imgDescription="📷 People Playing Chess"
+              className="p-2"
             />
             <BlogText>{blogData.blogText}</BlogText>
           </Blog>
