@@ -1,3 +1,4 @@
+"use client";
 import {
   Blog,
   BlogDescription,
@@ -6,33 +7,72 @@ import {
   BlogTitle,
 } from "@/components/blog";
 import CustomNavBar from "@/components/customNavBar";
+import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
-type Props = {
-  params: Promise<{ blogId: string }>;
-  searchParams: Promise<{ [blogId: string]: string | string[] | undefined }>;
-};
+interface BlogData {
+  title: string;
+  description: string;
+  imageUrl: string;
+  blogText: string;
+  author: string;
+}
 
-export default async function Page({ params }: Props) {
-  const { blogId } = await params;
+export default function Page() {
+  const [blogData, setBlogData] = useState<BlogData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const { blogId } = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/blogs/?id=${blogId}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch blog data");
+        }
+        const json = await response.json();
+        setBlogData(json.blogs[0]);
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+        setError("Failed to load blog data. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [blogId]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!blogData) {
+    return <div>No blog data found.</div>;
+  }
+
   return (
     <div>
       <CustomNavBar />
       <div className="w-full flex flex-col sm:flex-row-reverse justify-center items-center">
         <div className="pt-[20vh] flex flex-col justify-center items-center">
           <Blog>
-            <BlogTitle title="Test Title" />
-            <BlogDescription description="Test Description" />
+            <BlogTitle>{blogData.title}</BlogTitle>
+            <BlogDescription>
+              by {blogData.author}
+              <br /> {blogData.description}
+            </BlogDescription>
             <BlogImage
-              imgLink="/chess-board.jpg"
+              imgLink={blogData.imageUrl}
               imgDescription="Image Footer"
             />
-            <BlogText>
-              Hello {blogId}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, harum
-              repellat numquam velit natus voluptate quam nesciunt eos
-              cupiditate commodi quis doloribus doloremque enim. Tenetur
-              voluptas cupiditate consectetur pariatur quos?
-            </BlogText>
+            <BlogText>{blogData.blogText}</BlogText>
           </Blog>
         </div>
       </div>

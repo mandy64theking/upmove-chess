@@ -16,7 +16,7 @@ export default function Page() {
           What we do differently?
         </h1>
         <div className="pt-15 grid mb-5 sm:grid-cols-3 gap-5 ">
-          <Card className="w-[80vw] sm:w-[25vw] m-auto dark:bg-muted">
+          <Card className="w-[80vw] sm:w-[25vw] m-auto dark:bg-muted transition-all hover-scale">
             <CardHeader>
               <CardTitle className="text-center">
                 Personalized Coaching
@@ -32,7 +32,7 @@ export default function Page() {
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="w-[80vw] sm:w-[25vw] m-auto dark:bg-muted">
+          <Card className="w-[80vw] sm:w-[25vw] m-auto dark:bg-muted transition-all hover-scale">
             <CardHeader>
               <CardTitle className="text-center">
                 Focus on Improving from Mistakes
@@ -48,7 +48,7 @@ export default function Page() {
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="w-[80vw] sm:w-[25vw] m-auto dark:bg-muted">
+          <Card className="w-[80vw] sm:w-[25vw] m-auto dark:bg-muted transition-all hover-scale">
             <CardHeader>
               <CardTitle className="text-center">
                 Tournament Planning and Preparation

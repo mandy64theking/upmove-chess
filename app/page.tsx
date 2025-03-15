@@ -37,7 +37,7 @@ export default function Home() {
           width={70}
           height={70}
           alt="Whatsapp icon"
-          className="fixed bottom-5 right-5 z-10 cursor-pointer"
+          className="fixed bottom-5 right-5 z-10 cursor-pointer transition-transform hover-scale"
         />
       </a>
       <div className="relative">
@@ -52,14 +52,14 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
         <CustomNavBar />
-        <div className="absolute top-20 left-0 h-[70vh] w-[90vw] m-auto z-0 flex items-center justify-center">
+        <div className="absolute top-20 left-0 h-[70vh] w-[90vw] m-auto z-0 flex items-center justify-center transition-opacity">
           <h1 className="text-white font-bold text-4xl text-center">
             {texts[currentTextIndex]}
           </h1>
         </div>
         <div className="absolute flex w-[90vw] mb-2 sm:hidden bottom-14 z-9 justify-center">
           <a href="/book-a-free-trial">
-            <Button className="border-gray cursor-pointer">
+            <Button className="border-gray cursor-pointer transition-transform hover-scale">
               Join Now! ♟️{" "}
             </Button>
           </a>
@@ -72,7 +72,7 @@ export default function Home() {
             Why Chess?
           </h1>
           <div className="grid mb-5 sm:grid-cols-2 gap-5">
-            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle>A Game for All Ages</CardTitle>
                 <CardDescription>
@@ -82,7 +82,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle>Enhances Critical Thinking</CardTitle>
                 <CardDescription>
@@ -92,7 +92,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle>Improves Memory & Concentration</CardTitle>
                 <CardDescription>
@@ -102,7 +102,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle>Boosts Academic Performance</CardTitle>
                 <CardDescription>
@@ -129,7 +129,7 @@ export default function Home() {
             effective and enjoyable! ♟️{" "}
           </h1>
           <div className="grid mx-auto sm:grid-cols-3 gap-1">
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>Students Trained</h1>
@@ -144,7 +144,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="font-bold text-center">200+</CardContent>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>Rated Players Created</h1>
@@ -159,7 +159,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="font-bold text-center">20+</CardContent>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>Hours of Training</h1>
@@ -176,7 +176,7 @@ export default function Home() {
                 10000+
               </CardContent>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>FIDE Rated Trainers!</h1>
@@ -193,7 +193,7 @@ export default function Home() {
                 5+ Years of Exp.
               </CardContent>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>Global Presence</h1>
@@ -210,7 +210,7 @@ export default function Home() {
                 10+ Countries
               </CardContent>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>Tournament Victories!</h1>
@@ -243,7 +243,7 @@ export default function Home() {
             to help you reach your full potential.
           </h1>
           <div className="grid mx-auto sm:grid-cols-3 gap-1">
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>Group Classes</h1>
@@ -261,7 +261,7 @@ export default function Home() {
                 students following level-wise curriculum!
               </CardContent>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>1-on-1 Classes</h1>
@@ -279,7 +279,7 @@ export default function Home() {
                 personalized training plan based on your performance!
               </CardContent>
             </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
+            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted transition-all hover-scale">
               <CardHeader>
                 <CardTitle className="flex justify-evenly items-center">
                   <h1>Offline Classes</h1>
@@ -322,7 +322,7 @@ export default function Home() {
             width={100}
             height={100}
             src="/chess-art.png"
-            className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh]"
+            className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh] transition-transform hover-scale"
             alt="Chess Art"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
@@ -345,7 +345,7 @@ export default function Home() {
             width={100}
             height={100}
             src="/chess-piece.jpg"
-            className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh]"
+            className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh] transition-transform hover-scale"
             alt="Chess Pieces"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />

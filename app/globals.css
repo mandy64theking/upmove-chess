@@ -122,3 +122,22 @@
     @apply bg-background text-foreground;
   }
 }
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+}
+
+.transition-opacity {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}

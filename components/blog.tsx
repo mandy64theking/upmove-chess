@@ -12,29 +12,29 @@ function Blog({
 }
 
 function BlogTitle({
-  title,
+  children,
   className,
 }: {
-  title: string;
+  children: React.ReactNode;
   className?: string;
 }) {
   return (
     <div className={cn("text-4xl font-bold text-center", className)}>
-      <h1>{title}</h1>
+      <h1>{children}</h1>
     </div>
   );
 }
 
 function BlogDescription({
-  description,
+  children,
   className,
 }: {
-  description: string;
+  children: React.ReactNode;
   className?: string;
 }) {
   return (
     <div className={cn("text-sm text-muted-foreground text-center", className)}>
-      <p>{description}</p>
+      <p>{children}</p>
     </div>
   );
 }

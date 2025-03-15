@@ -21,7 +21,7 @@ export default function Page() {
                 width={100}
                 height={100}
                 src="/email.png"
-                className="max-w-8 pl-1 pr-2 dark:invert"
+                className="max-w-8 pl-1 pr-2 dark:invert transition-transform hover-scale"
                 alt="Email"
               />
             </a>
@@ -33,7 +33,7 @@ export default function Page() {
                 width={100}
                 height={100}
                 src="/whatsapp.png"
-                className="max-w-8 pl-1 pr-2 dark:invert"
+                className="max-w-8 pl-1 pr-2 dark:invert transition-transform hover-scale"
                 alt="Whatsapp"
               />
             </a>
@@ -45,7 +45,7 @@ export default function Page() {
             width={100}
             height={100}
             src="/analog-clock.jpg"
-            className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh]"
+            className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh] transition-transform hover-scale"
             alt="Chess Clock"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />

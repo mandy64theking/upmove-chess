@@ -66,13 +66,13 @@ export default function Page() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-5 mt-[20vh] bg-muted mb-5 min-w-70 w-[70vw] sm:w-[30vw] m-auto border-2 rounded-3xl p-5"
+          className="space-y-5 mt-[20vh] bg-muted mb-5 min-w-70 w-[70vw] sm:w-[30vw] m-auto border-2 rounded-3xl p-5 transition-all hover-scale"
         >
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="transition-all hover-scale">
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter Your Name" {...field} />
@@ -85,7 +85,7 @@ export default function Page() {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="transition-all hover-scale">
                 <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter Your Email" {...field} />
@@ -98,7 +98,7 @@ export default function Page() {
             control={form.control}
             name="message"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="transition-all hover-scale">
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter Your Message" {...field} />
@@ -111,7 +111,7 @@ export default function Page() {
             control={form.control}
             name="age"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="transition-all hover-scale">
                 <FormLabel>Age</FormLabel>
                 <FormControl>
                   <Input
@@ -130,7 +130,7 @@ export default function Page() {
             control={form.control}
             name="phone"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="transition-all hover-scale">
                 <FormLabel>Phone</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter Your Phone" {...field} />
@@ -139,10 +139,13 @@ export default function Page() {
               </FormItem>
             )}
           />
-          <FormDescription>
+          <FormDescription className="transition-all hover-scale">
             We&apos;ll never share your details with anyone else.
           </FormDescription>
-          <Button className="cursor-pointer" type="submit">
+          <Button
+            className="cursor-pointer transition-all hover-scale"
+            type="submit"
+          >
             Submit
           </Button>
         </form>
