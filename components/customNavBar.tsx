@@ -16,6 +16,7 @@ export default function CustomNavBar() {
   const handleMenuClick = () => {
     setMenuOpen(!menuOpen);
   };
+
   return (
     <div
       className={`fixed top-0 left-0 sm:w-[95vw] w-[90vw] bg-background dark:bg-black opacity-90 dark:opacity-100 flex ${
@@ -72,13 +73,13 @@ export default function CustomNavBar() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
-              <a href="" onClick={() => setTheme("dark")}>
+              <a href="#" onClick={() => setTheme("dark")}>
                 <Image
                   width={100}
                   height={100}
                   src="/night-mode.png"
                   className="max-w-7 ml-2 m-1 flex dark:hidden"
-                  alt=""
+                  alt="Switch to Dark Mode"
                 />
               </a>
             </TooltipTrigger>
@@ -90,13 +91,13 @@ export default function CustomNavBar() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
-              <a href="" onClick={() => setTheme("light")}>
+              <a href="#" onClick={() => setTheme("light")}>
                 <Image
                   width={100}
                   height={100}
                   src="/light-mode.png"
                   className="invert ml-2 m-1 max-w-7 hidden dark:flex"
-                  alt=""
+                  alt="Switch to Light Mode"
                 />
               </a>
             </TooltipTrigger>
