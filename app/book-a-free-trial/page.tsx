@@ -42,14 +42,14 @@ export default function Page() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true); // Set loading state to true
-    const queryParams = new URLSearchParams(values as any).toString();
-    const url = `https://z5pjr4limdtaxlsjhrprc5gvge0auzbg.lambda-url.us-east-2.on.aws/?${queryParams}`;
+    const url = "https://mail-api-j7kb.onrender.com/demo-request";
     await fetch(url, {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-api-key": process.env.NEXT_PUBLIC_API_KEY || "",
       },
-      cache: "force-cache",
+      body: JSON.stringify(values),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -60,7 +60,8 @@ export default function Page() {
         console.error("Error:", error);
       })
       .finally(() => {
-        setIsLoading(false); // Set loading state to false
+        setIsLoading(false);
+        form.reset(); // Set loading state to false
       });
   }
 
