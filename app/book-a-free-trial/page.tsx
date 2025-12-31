@@ -100,7 +100,7 @@ export default function Page() {
       </div>
 
       {/* ================= FORM SECTION ================= */}
-      <section className="relative flex flex-col items-center justify-center pt-[18vh] px-6">
+      <section className="relative flex flex-col items-center justify-center pt-[28vh] px-6">
         {/* Heading */}
         <div className="text-center max-w-2xl mb-10">
           <h1
