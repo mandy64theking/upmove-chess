@@ -21,7 +21,7 @@ export default function CustomNavBar() {
         menuOpen
           ? "flex-col h-[48vh] z-10 opacity-100"
           : "flex-row h-[15vh] z-10"
-      } justify-between p-8 m-5 border-2 border-gray rounded-3xl`}
+      } justify-between p-8 m-5 border-2 border-[#339D87] rounded-3xl`}
     >
       <div className="flex flex-row justify-between w-full items-center">
         <img
