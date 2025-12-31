@@ -1,311 +1,402 @@
 "use client";
-import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import CustomNavBar from "./customNavBar";
 
 export default function Home() {
-  const texts = [
-    "Chess is Art",
-    "Chess is Science",
-    "Chess is Sport",
-    "Chess is Everything!",
-  ];
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 2000); // Change text every 2 seconds
-
-    return () => clearInterval(interval);
-  }, [texts.length]);
+  const scrollToWhyChess = () => {
+    const section = document.getElementById("why-chess");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <div>
+    <div className="w-full overflow-x-hidden">
+      {/* WhatsApp Floating Button */}
       <a href="https://wa.me/919028698447">
         <Image
           src="/whatsapp-green.png"
           width={70}
           height={70}
           alt="Whatsapp icon"
-          className="fixed bottom-5 right-5 z-10 cursor-pointer"
+          className="fixed bottom-5 right-5 z-50 cursor-pointer"
         />
       </a>
-      <div className="relative">
-        <video
-          autoPlay
-          loop
-          muted
-          className="w-full h-[100vh] object-cover overflow-hidden"
-        >
-          <source src="homepagevid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <CustomNavBar />
-        <div className="absolute top-20 left-0 h-[70vh] w-[90vw] m-auto z-0 flex items-center justify-center">
-          <h1 className="text-white font-bold text-4xl text-center">
-            {texts[currentTextIndex]}
-          </h1>
+
+      {/* ================= HERO SECTION ================= */}
+      <section
+        className="relative min-h-screen flex flex-col items-center text-center px-6 overflow-hidden
+        bg-gradient-to-br from-[#339D87] via-[#2f8f7b] to-[#1f6f60]"
+      >
+        {/* Chess Pieces Background + layered gradient overlays */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Subtle overlay to enrich the base teal gradient and add purple accent */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0f4f45]/40 via-[#339D87]/25 to-[#6b46c1]/18 mix-blend-overlay" />
+          {/* Blurred color orbs for depth */}
+          <div className="absolute -top-20 -left-16 w-96 h-96 bg-purple-600/12 rounded-full blur-3xl" />
+          <div className="absolute bottom-24 -right-24 w-80 h-80 bg-blue-500/12 rounded-full blur-2xl" />
+          <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-[#33a089]/10 rounded-full blur-2xl" />
+
+          {/* Large background pieces (multiple, varied sizes/positions) */}
+          <Image
+            src="/chess-king.png"
+            alt=""
+            width={460}
+            height={460}
+            className="absolute top-12 left-[-12px] opacity-48 blur-sm scale-105 transition-all duration-700"
+          />
+          <Image
+            src="/chess-queen.png"
+            alt=""
+            width={400}
+            height={400}
+            className="absolute bottom-12 right-[-4px] opacity-44 blur-sm scale-105 transition-all duration-700"
+          />
+          <Image
+            src="/chess-knight.png"
+            alt=""
+            width={340}
+            height={340}
+            className="absolute top-1/2 right-1/4 opacity-36 blur-sm scale-105 transition-all duration-700"
+          />
+          <Image
+            src="/chess-king.png"
+            alt=""
+            width={260}
+            height={260}
+            className="absolute bottom-40 left-[-20px] opacity-36 blur-sm scale-105 transition-all duration-900"
+          />
+          <Image
+            src="/chess-queen.png"
+            alt=""
+            width={220}
+            height={220}
+            className="absolute top-28 right-1/3 opacity-32 blur-sm scale-100 transition-all duration-900"
+          />
+
+          {/* Decorative emoji chess pieces (increased count, staggered delays) */}
+          <div
+            className="absolute top-8 left-6 text-8xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0s" }}
+          >
+            ♔
+          </div>
+          <div
+            className="absolute top-16 right-12 text-7xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0.3s" }}
+          >
+            ♕
+          </div>
+          <div
+            className="absolute top-28 left-28 text-6xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0.6s" }}
+          >
+            ♖
+          </div>
+          <div
+            className="absolute top-1/3 right-20 text-9xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0.9s" }}
+          >
+            ♛
+          </div>
+          <div
+            className="absolute left-1/3 bottom-44 text-8xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "1.1s" }}
+          >
+            ♘
+          </div>
+          <div
+            className="absolute bottom-28 right-28 text-7xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "1.4s" }}
+          >
+            ♝
+          </div>
+          <div
+            className="absolute bottom-12 left-16 text-7xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "1.6s" }}
+          >
+            ♟️
+          </div>
+          <div
+            className="absolute right-16 top-1/2 text-6xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "1.9s" }}
+          >
+            ♞
+          </div>
         </div>
-        <div className="absolute flex w-[90vw] mb-2 sm:hidden bottom-14 z-9 justify-center">
+
+        {/* Foreground Content */}
+        <div className="relative z-10 w-full flex flex-col items-center">
+          <CustomNavBar />
+
+          <div className="mt-32 flex flex-col items-center">
+            <h1
+              className="hero-title text-white font-extrabold text-4xl sm:text-6xl max-w-4xl leading-tight"
+              style={{
+                textShadow:
+                  "0 0 30px rgba(51, 157, 135, 0.5), 0 0 60px rgba(51, 157, 135, 0.3)",
+              }}
+            >
+              Train Like a Champion! <br /> Play Like One.
+            </h1>
+
+            <p className="mt-8 text-white/80 text-lg sm:text-xl max-w-2xl leading-relaxed">
+              Expert training by FIDE-rated coaches • Consistent Results <br />
+              Trusted by 1,000+ learners worldwide
+            </p>
+
+            <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/book-a-free-trial">
+                <Button className="bg-white cursor-pointer text-[#339D87] font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:bg-white/95">
+                  Book a Free Trial
+                </Button>
+              </a>
+
+              <Button
+                onClick={scrollToWhyChess}
+                className="bg-transparent border-2 cursor-pointer border-white text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:border-white/80"
+              >
+                Learn More ↓
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= WHY CHESS ================= */}
+      <section
+        id="why-chess"
+        className="relative min-h-[90vh] flex flex-col items-center justify-center px-6 py-20"
+      >
+        {/* Decorative chess pieces */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div
+            className="absolute top-10 left-8 text-7xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0s" }}
+          >
+            ♘
+          </div>
+          <div
+            className="absolute bottom-20 right-12 text-6xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0.5s" }}
+          >
+            ♗
+          </div>
+          <div
+            className="absolute top-1/3 right-20 text-5xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "1s" }}
+          >
+            ♙
+          </div>
+        </div>
+        <div className="relative">
+          <h2
+            className="font-bold text-4xl text-center bg-gradient-to-r from-[#339D87] to-[#1f6f60]
+          bg-clip-text text-transparent"
+          >
+            Why Chess?
+          </h2>
+
+          <div className="mt-12 grid sm:grid-cols-2 gap-6 max-w-5xl">
+            {[
+              {
+                title: "A Game for All Ages",
+                desc: "Chess is a lifelong journey of learning and enjoyment. It’s never too early—or too late—to start.",
+              },
+              {
+                title: "Enhances Critical Thinking",
+                desc: "Develops planning, foresight, and decision-making skills essential in academics and life.",
+              },
+              {
+                title: "Improves Memory & Focus",
+                desc: "Strengthens concentration and recall through pattern recognition and calculation.",
+              },
+              {
+                title: "Boosts Academic Performance",
+                desc: "Proven to improve logical reasoning, mathematics, and reading comprehension.",
+              },
+            ].map((item, index) => (
+              <Card
+                key={index}
+                className="border-l-4 border-[#339D87] dark:bg-muted"
+              >
+                <CardHeader>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription>{item.desc}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= WHO WE ARE ================= */}
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-6 py-20 bg-muted/30">
+        {/* Decorative chess pieces */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div
+            className="absolute top-10 left-8 text-7xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0.2s" }}
+          >
+            ♔
+          </div>
+          <div
+            className="absolute bottom-20 right-12 text-6xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0.7s" }}
+          >
+            ♕
+          </div>
+          <div
+            className="absolute top-1/3 right-20 text-5xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "1.2s" }}
+          >
+            ♖
+          </div>
+        </div>
+        <div className="relative">
+          <h2
+            className="font-bold text-4xl text-center bg-gradient-to-r from-[#339D87] to-[#1f6f60]
+          bg-clip-text text-transparent"
+          >
+            Who We Are
+          </h2>
+
+          <p className="mt-8 max-w-3xl text-center text-lg">
+            <b>Upmove Chess Academy</b> is a professional chess institute
+            delivering structured mentorship, personalized plans, and real-game
+            analysis to players across the globe.
+          </p>
+
+          <div className="mt-12 grid sm:grid-cols-3 gap-6 max-w-6xl">
+            {[
+              { label: "Students Trained", value: "200+" },
+              { label: "Rated Players Created", value: "20+" },
+              { label: "Hours of Training", value: "10,000+" },
+              { label: "FIDE Rated Trainers", value: "5+ Years Exp." },
+              { label: "Global Presence", value: "10+ Countries" },
+              { label: "Tournament Victories", value: "Unlimited" },
+            ].map((item, index) => (
+              <Card key={index} className="text-center dark:bg-muted">
+                <CardHeader>
+                  <CardTitle>{item.label}</CardTitle>
+                </CardHeader>
+                <CardContent className="font-bold text-2xl">
+                  {item.value}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= WHAT WE DO ================= */}
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-6 py-20">
+        {/* Decorative chess pieces */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div
+            className="absolute top-10 left-8 text-7xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0.1s" }}
+          >
+            ♛
+          </div>
+          <div
+            className="absolute bottom-20 right-12 text-6xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "0.6s" }}
+          >
+            ♝
+          </div>
+          <div
+            className="absolute top-1/3 right-20 text-5xl text-[#339D87] upmove-fade"
+            style={{ animationDelay: "1.1s" }}
+          >
+            ♟️
+          </div>
+        </div>
+        <div className="relative">
+          <h2 className="font-bold text-4xl text-center bg-gradient-to-r from-[#339D87] to-[#1f6f60] bg-clip-text text-transparent">
+            What We Do
+          </h2>
+
+          <p className="mt-8 max-w-3xl text-center text-lg mx-auto">
+            We offer <b>Group</b> and <b>1-on-1</b> coaching sessions with
+            expert trainers, tailored for beginners to advanced tournament
+            players.
+          </p>
+
+          <div className="mt-12 grid sm:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Group Classes",
+                desc: "Small batches of 3–6 students following a structured, level-wise curriculum.",
+              },
+              {
+                title: "1-on-1 Coaching",
+                desc: "Personalized training plans with deep analysis and performance tracking.",
+              },
+              {
+                title: "Offline Classes",
+                desc: "In-person coaching with structured lessons and fun learning activities.",
+                footer: "Available in Amravati (M.H)",
+              },
+            ].map((item, index) => (
+              <Card key={index} className="dark:bg-muted">
+                <CardHeader>
+                  <CardTitle>{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-muted-foreground">
+                  {item.desc}
+                </CardContent>
+                {item.footer && (
+                  <CardFooter className="text-sm text-muted-foreground">
+                    {item.footer}
+                  </CardFooter>
+                )}
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FINAL CTA ================= */}
+      <section className="relative py-20 px-6 text-center bg-gradient-to-r from-[#339D87] to-[#1f6f60]">
+        {/* Decorative chess pieces */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div
+            className="absolute top-10 left-8 text-7xl text-white upmove-fade"
+            style={{ animationDelay: "0s" }}
+          >
+            ♚
+          </div>
+          <div
+            className="absolute bottom-20 right-12 text-6xl text-white upmove-fade"
+            style={{ animationDelay: "0.4s" }}
+          >
+            ♘
+          </div>
+        </div>
+        <div className="relative z-10">
+          <h2 className="text-white text-3xl sm:text-4xl font-bold">
+            Ready to See Real Progress in Chess?
+          </h2>
+          <p className="text-white/90 mt-4 max-w-xl mx-auto">
+            Book a free trial session and experience structured coaching that
+            delivers results.
+          </p>
           <a href="/book-a-free-trial">
-            <Button className="border-gray cursor-pointer">
-              Join Now! ♟️{" "}
+            <Button className="mt-8 cursor-pointer bg-white text-[#339D87] px-8 py-6 text-lg font-semibold">
+              Book a Free Trial
             </Button>
           </a>
         </div>
-      </div>
-
-      <div className="min-h-[90vh] w-full flex flex-col sm:flex-row justify-center items-center">
-        <div className="pt-[15vh]">
-          <h1 className="text-foreground bg-background font-bold text-4xl text-center">
-            Why Chess?
-          </h1>
-          <div className="grid mb-5 sm:grid-cols-2 gap-5">
-            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle>A Game for All Ages</CardTitle>
-                <CardDescription>
-                  Whether you're a child, a student, or an adult, chess is a
-                  lifelong journey of learning and enjoyment. It’s never too
-                  early—or too late—to start!
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle>Enhances Critical Thinking</CardTitle>
-                <CardDescription>
-                  Chess teaches players to think ahead, analyze situations, and
-                  make strategic decisions—skills that are essential in
-                  academics and real life.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle>Improves Memory & Concentration</CardTitle>
-                <CardDescription>
-                  With each game, players develop sharper memory and better
-                  focus, as they must recall moves, anticipate opponents'
-                  strategies, and stay engaged throughout the match.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[40vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle>Boosts Academic Performance</CardTitle>
-                <CardDescription>
-                  Studies show that children who play chess perform better in
-                  subjects like mathematics and reading, as the game strengthens
-                  logical reasoning and pattern recognition.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </div>
-
-      <div className="min-h-[90vh] w-full flex flex-col sm:flex-row justify-center items-center">
-        <div className="pt-[15vh]">
-          <h1 className="text-foreground bg-background font-bold text-4xl text-center">
-            Who We Are?
-          </h1>
-          <h1 className="text-foreground bg-background font-normal text-center mt-10 max-w-[80vw]">
-            <b>Upmove Chess Academy</b> is a leading chess institute offering
-            personalized mentorship and fun, engaging training for all skill
-            levels. Our expert coaches focus on strategic growth through
-            structured lessons and real-game analysis, making learning both
-            effective and enjoyable! ♟️{" "}
-          </h1>
-          <div className="grid mx-auto sm:grid-cols-3 gap-1">
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>Students Trained</h1>
-                  <img
-                    src="education.png"
-                    className="dark:invert max-w-8"
-                    alt=""
-                  />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-bold text-center">200+</CardContent>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>Rated Players Created</h1>
-                  <img
-                    src="chart-646.png"
-                    className="dark:invert max-w-8"
-                    alt=""
-                  />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-bold text-center">20+</CardContent>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>Hours of Training</h1>
-                  <img src="clock.png" className="dark:invert max-w-8" alt="" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-bold text-center">
-                10000+
-              </CardContent>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>FIDE Rated Trainers!</h1>
-                  <img src="chess.png" className="dark:invert max-w-8" alt="" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-bold text-center">
-                5+ Years of Exp.
-              </CardContent>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>Global Presence</h1>
-                  <img src="globe.png" className="dark:invert max-w-8" alt="" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-bold text-center">
-                10+ Countries
-              </CardContent>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>Tournament Victories!</h1>
-                  <img
-                    src="trophy.png"
-                    className="dark:invert max-w-8"
-                    alt=""
-                  />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-bold text-center">
-                Unlimited
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
-
-      <div className="min-h-[90vh] w-full flex flex-col sm:flex-row justify-center items-center">
-        <div className="pt-[15vh]">
-          <h1 className="text-foreground bg-background font-bold text-4xl text-center">
-            What we do?
-          </h1>
-          <h1 className="text-foreground bg-background font-normal text-center mt-10 max-w-[80vw] sm:max-w-[80vw]">
-            We offer personalized <b>Group</b> and <b>1-on-1</b> coaching
-            sessions with experienced chess trainers to mentor you. Whether
-            you're a beginner or a seasoned player, we have the expertise to
-            help you reach your full potential.
-          </h1>
-          <div className="grid mx-auto sm:grid-cols-3 gap-1">
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>Group Classes</h1>
-                  <img src="group.png" className="dark:invert max-w-8" alt="" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-normal text-muted-foreground">
-                An Interactive online class taken with a group of 3 to 6
-                students following level-wise curriculum!
-              </CardContent>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>1-on-1 Classes</h1>
-                  <img
-                    src="interview.png"
-                    className="dark:invert max-w-8"
-                    alt=""
-                  />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-normal text-muted-foreground">
-                An Individual online class taken with your trainer following a
-                personalized training plan based on your performance!
-              </CardContent>
-            </Card>
-            <Card className="mt-5 w-[80vw] sm:w-[20vw] dark:bg-muted">
-              <CardHeader>
-                <CardTitle className="flex justify-evenly items-center">
-                  <h1>Offline Classes</h1>
-                  <img src="group.png" className="dark:invert max-w-8" alt="" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="font-normal text-muted-foreground">
-                An Interactive class taken with a group of students following
-                level-wise curriculum and fun activities!
-              </CardContent>
-              <CardFooter className="font-normal text-muted-foreground">
-                At our Offline Centers in Amravati,(M.H)
-              </CardFooter>
-            </Card>
-          </div>
-        </div>
-      </div>
-
-      <div className="h-[90vh] w-full flex flex-col sm:flex-row-reverse justify-center items-center">
-        <div className="pt-[15vh] flex-1/2 flex flex-col justify-center items-center">
-          <h1 className="text-foreground bg-background font-bold text-4xl text-center">
-            Chess off the Board!
-          </h1>
-          <h1 className="p-2 pl-10 pr-10 sm:pl-20 sm:pr-20 text-foreground bg-background text-center">
-            At Upmove, we believe in overall development of the students
-            including{" "}
-            <b>
-              Sports Psychology, Logical Design Making and Analytical Thinking
-            </b>
-          </h1>
-        </div>
-        <div className="flex-1/2 flex justify-center sm:pt-[15vh] pb-5 dark:invert">
-          <img
-            src="chess-art.png"
-            className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh]"
-            alt="Chess Pieces"
-          />
-        </div>
-      </div>
-
-      <div className="h-[90vh] w-full flex flex-col sm:flex-row justify-center items-center">
-        <div className="pt-[15vh] flex-1/2 flex flex-col justify-center items-center">
-          <h1 className="text-foreground bg-background font-bold text-4xl text-center">
-            No More Random Puzzles!
-          </h1>
-          <h1 className="p-2 pl-10 pr-10 sm:pl-20 sm:pr-20 text-foreground bg-background text-center">
-            At Upmove, we believe in <b>personalized</b> training plans for
-            students, tweaking and changing the plan based on tournament
-            performance
-          </h1>
-        </div>
-        <div className="flex-1/2 flex justify-center sm:pt-[15vh] pb-5">
-          <img
-            src="chess-piece.jpg"
-            className="bg-cover rounded-full object-cover max-h-[45vh] w-[45vh] sm:max-h-[55vh] sm:w-[55vh]"
-            alt="Chess Pieces"
-          />
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
