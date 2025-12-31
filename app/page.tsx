@@ -137,7 +137,7 @@ export default function Home() {
         <div className="relative z-10 w-full flex flex-col items-center">
           <CustomNavBar />
 
-          <div className="mt-32 flex flex-col items-center">
+          <div className="mt-64 flex flex-col items-center">
             <h1
               className="hero-title text-white font-extrabold text-4xl sm:text-6xl max-w-4xl leading-tight"
               style={{

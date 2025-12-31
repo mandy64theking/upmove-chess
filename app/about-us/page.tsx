@@ -45,7 +45,7 @@ export default function Page() {
       </div>
 
       {/* ================= CONTENT ================= */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-[18vh] px-6">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-[28vh] px-6">
         {/* Heading */}
         <div className="text-center max-w-3xl">
           <h1
