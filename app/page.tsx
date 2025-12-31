@@ -287,9 +287,9 @@ export default function Home() {
 
           <div className="mt-12 grid sm:grid-cols-3 gap-6 max-w-6xl">
             {[
-              { label: "Students Trained", value: "200+" },
-              { label: "Rated Players Created", value: "20+" },
-              { label: "Hours of Training", value: "10,000+" },
+              { label: "Students Trained", value: "1000+" },
+              { label: "Rated Players Created", value: "30+" },
+              { label: "Hours of Training", value: "30,000+" },
               { label: "FIDE Rated Trainers", value: "5+ Years Exp." },
               { label: "Global Presence", value: "10+ Countries" },
               { label: "Tournament Victories", value: "Unlimited" },
