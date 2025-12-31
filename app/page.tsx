@@ -145,12 +145,12 @@ export default function Home() {
                   "0 0 30px rgba(51, 157, 135, 0.5), 0 0 60px rgba(51, 157, 135, 0.3)",
               }}
             >
-              Build Thinking Champions Through Chess
+              Train Like a Champion! <br /> Play Like One.
             </h1>
 
             <p className="mt-8 text-white/80 text-lg sm:text-xl max-w-2xl leading-relaxed">
-              Personalized online & offline chess coaching for all age groups.
-              Structured learning. Real progress. Measurable results.
+              Expert training by FIDE-rated coaches • Consistent Results <br />
+              Trusted by 1,000+ learners worldwide
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
