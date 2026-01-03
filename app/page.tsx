@@ -134,7 +134,7 @@ export default function Home() {
         </div>
 
         {/* Foreground Content */}
-        <div className="relative z-10 w-full flex flex-col items-center">
+        <div className="relative w-full flex flex-col items-center">
           <CustomNavBar />
 
           <div className=" pt-[10vh] flex flex-col items-center">
@@ -392,7 +392,7 @@ export default function Home() {
             ♘
           </div>
         </div>
-        <div className="relative z-10">
+        <div className="relative">
           <h2 className="text-white text-3xl sm:text-4xl font-bold">
             Ready to See Real Progress in Chess?
           </h2>
